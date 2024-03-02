@@ -1,5 +1,5 @@
 <script lang="ts"></script>
 
 <template>
-  <div>Lorem ipsum dolor sit.</div>
+  <div class="bg-slate-600 text-red-600">Lorem ipsum dolor sit.</div>
 </template>
