@@ -8,5 +8,6 @@ module.exports = {
   rules: {
     'comma-dangle': 'off',
     semi: 'off',
+    'vue/singleline-html-element-content-newline': 'off',
   },
 };
