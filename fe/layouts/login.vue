@@ -8,9 +8,3 @@
     </main>
   </div>
 </template>
-
-<style>
-body {
-  @apply bg-gray-700;
-}
-</style>

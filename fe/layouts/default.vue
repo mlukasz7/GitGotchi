@@ -9,10 +9,6 @@
 </template>
 
 <style>
-body {
-  @apply bg-white;
-}
-
 .page-enter-active,
 .page-leave-active {
   @apply transition-all duration-300;
