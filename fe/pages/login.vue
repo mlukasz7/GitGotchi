@@ -5,6 +5,12 @@ definePageMeta({
   layout: 'login',
 });
 
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === 'SIGNED_IN') {
+    document.cookie = `supabaseToken=${session?.access_token}; path=/`;
+  }
+});
+
 const signInWithGithub = async () => {
   await supabase.auth.signInWithOAuth({
     provider: 'github',

@@ -14,6 +14,11 @@ onBeforeMount(async () => {
     userAvatar.value = data.user?.identities?.[0]?.identity_data?.avatar_url;
   }
 });
+
+async function signOut() {
+  await supabase.auth.signOut();
+  window.location.href = '/';
+}
 </script>
 
 <template>
@@ -26,6 +31,7 @@ onBeforeMount(async () => {
       <div>
         <NuxtLink v-if="user" to="/about" class="text-white text-base">About</NuxtLink>
         <img v-if="user" class="size-6 rounded-full inline-block ml-4" :src="userAvatar" />
+        <button v-if="user" class="ml-4 text-white" @click="signOut">SignOut</button>
       </div>
     </div>
   </header>

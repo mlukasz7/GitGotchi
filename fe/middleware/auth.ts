@@ -1,9 +1,7 @@
-import supabase from '@/config/supabaseClient';
+export default defineNuxtRouteMiddleware(() => {
+  const supabaseToken = useCookie('supabaseToken');
 
-export default defineNuxtRouteMiddleware(async () => {
-  const { data } = await supabase.auth.getUser();
-
-  if (!data.user?.id) {
+  if (!supabaseToken.value) {
     return navigateTo('/login');
   }
 });
