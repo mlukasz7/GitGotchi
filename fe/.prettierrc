@@ -10,5 +10,6 @@
   "trailingComma": "all",
   "jsxBracketSameLine": false,
   "proseWrap": "always",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

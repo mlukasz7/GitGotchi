@@ -3,7 +3,7 @@ import { ref, onBeforeMount } from 'vue';
 
 import supabase from '@/config/supabaseClient';
 
-const user = ref(null);
+const user = ref();
 const userAvatar = ref('');
 
 onBeforeMount(async () => {
@@ -23,14 +23,14 @@ async function signOut() {
 
 <template>
   <header class="bg-gray-700">
-    <div class="container mx-auto px-8 py-4 flex items-center justify-between">
-      <NuxtLink to="/" class="text-white text-xl">
-        <span class="font-bold tracking-wider mr-1">Git</span>
+    <div class="container mx-auto flex items-center justify-between px-8 py-4">
+      <NuxtLink to="/" class="text-xl text-white">
+        <span class="mr-1 font-bold tracking-wider">Git</span>
         <span class="tracking-widest">Gotchi</span>
       </NuxtLink>
       <div>
-        <NuxtLink v-if="user" to="/about" class="text-white text-base">About</NuxtLink>
-        <img v-if="user" class="size-6 rounded-full inline-block ml-4" :src="userAvatar" />
+        <NuxtLink v-if="user" to="/about" class="text-base text-white">About</NuxtLink>
+        <img v-if="user" class="ml-4 inline-block size-6 rounded-full" :src="userAvatar" />
         <button v-if="user" class="ml-4 text-white" @click="signOut">SignOut</button>
       </div>
     </div>
