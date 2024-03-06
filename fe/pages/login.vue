@@ -21,7 +21,7 @@ const signInWithGithub = async () => {
 <template>
   <div>
     <h1 class="text-lg">Login</h1>
-    <button class="bg-black text-white rounded-md mt-4 py-2 px-4" @click="signInWithGithub">
+    <button class="mt-4 rounded-md bg-black px-4 py-2 text-white" @click="signInWithGithub">
       Login with GitHub
     </button>
   </div>

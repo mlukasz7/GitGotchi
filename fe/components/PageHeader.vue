@@ -4,14 +4,12 @@ import { ref, onBeforeMount } from 'vue';
 import supabase from '@/config/supabaseClient';
 
 const user = ref();
-const userAvatar = ref('');
 
 onBeforeMount(async () => {
   const { data } = await supabase.auth.getUser();
 
   if (data.user) {
     user.value = data.user;
-    userAvatar.value = data.user?.identities?.[0]?.identity_data?.avatar_url;
   }
 });
 
@@ -22,16 +20,27 @@ async function signOut() {
 </script>
 
 <template>
-  <header class="bg-gray-700">
-    <div class="container mx-auto flex items-center justify-between px-8 py-4">
+  <header class="absolute left-0 right-0 top-0 bg-gray-700">
+    <div class="container mx-auto flex h-14 items-center justify-between px-8 py-4">
       <NuxtLink to="/" class="text-xl text-white">
         <span class="mr-1 font-bold tracking-wider">Git</span>
         <span class="tracking-widest">Gotchi</span>
       </NuxtLink>
       <div>
-        <NuxtLink v-if="user" to="/about" class="text-base text-white">About</NuxtLink>
-        <img v-if="user" class="ml-4 inline-block size-6 rounded-full" :src="userAvatar" />
-        <button v-if="user" class="ml-4 text-white" @click="signOut">SignOut</button>
+        <button
+          v-if="user"
+          class="ml-4 text-white duration-150 ease-in hover:text-red-400"
+          @click="signOut"
+        >
+          Sign Out
+        </button>
+        <NuxtLink
+          v-else
+          class="ml-4 text-green-200 duration-150 ease-in hover:text-green-400"
+          to="/login"
+        >
+          Sign In
+        </NuxtLink>
       </div>
     </div>
   </header>

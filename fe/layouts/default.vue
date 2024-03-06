@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="h-svh">
     <PageHeader />
-    <main class="container mx-auto px-8 py-4">
-      <slot />
-    </main>
+    <div class="flex">
+      <SideNav />
+      <main class="container mx-auto h-svh overflow-auto px-8 py-20">
+        <slot />
+      </main>
+    </div>
     <PageFooter />
   </div>
 </template>
@@ -16,6 +19,6 @@
 
 .page-enter-from,
 .page-leave-to {
-  @apply opacity-0 blur-md -translate-x-6;
+  @apply -translate-x-6 opacity-0 blur-md;
 }
 </style>
