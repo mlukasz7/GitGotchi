@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 
 import supabase from '@/config/supabaseClient';
 
@@ -20,7 +20,7 @@ async function signOut() {
 </script>
 
 <template>
-  <header class="absolute left-0 right-0 top-0 bg-gray-700">
+  <header class="absolute inset-x-0 top-0 bg-gray-700">
     <div class="container mx-auto flex h-14 items-center justify-between px-8 py-4">
       <NuxtLink to="/" class="text-xl text-white">
         <span class="mr-1 font-bold tracking-wider">Git</span>

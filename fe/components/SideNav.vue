@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 
 import supabase from '@/config/supabaseClient';
 

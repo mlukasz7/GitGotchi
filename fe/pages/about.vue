@@ -6,7 +6,7 @@ definePageMeta({
 
 <template>
   <MoodTv />
-  <p class="my-4" v-for="i in new Array(20)" :key="i">
+  <p v-for="i in new Array(20)" :key="i" class="my-4">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, tenetur.
   </p>
 </template>
