@@ -6,7 +6,4 @@ export default defineNuxtConfig({
     exposeConfig: true,
     viewer: true,
   },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-  },
 });

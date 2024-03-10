@@ -1,7 +1,12 @@
-export default defineNuxtRouteMiddleware(() => {
-  const supabaseToken = useCookie('supabaseToken');
+import supabase from '@/config/supabaseClient';
 
-  if (!supabaseToken.value) {
+export default defineNuxtRouteMiddleware(async () => {
+  const supabaseToken = useCookie('supabaseToken');
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!supabaseToken.value && !user) {
     return navigateTo('/login');
   }
 });
