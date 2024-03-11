@@ -25,8 +25,11 @@ onBeforeMount(async () => {
         <nav>
           <ul>
             <li>
-              <NuxtLink class="text-black duration-150 ease-in hover:text-blue-500" to="/about">
-                About
+              <NuxtLink
+                class="text-black duration-150 ease-in hover:text-blue-500"
+                to="/repositories"
+              >
+                Repositories
               </NuxtLink>
             </li>
           </ul>
